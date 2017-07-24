@@ -19,10 +19,12 @@ class TasksController {
   }
 
   deleteTask(id, redisplayList) {
+    // Delete the task from its list
     let taskToDelete = Task.find(id)
     let taskInd = taskToDelete.list.tasks.indexOf(taskToDelete)
     taskToDelete.list.tasks.splice(taskInd, 1)
     console.log(`Deleted task ${taskToDelete.id} from list position ${taskInd}`)
+    // Now delete it from Task.all
     taskInd = Task.all.indexOf(taskToDelete)
     Task.all.splice(taskInd, 1)
     console.log(`Deleted task ${taskToDelete.id} from Task.all position ${taskInd}`)
