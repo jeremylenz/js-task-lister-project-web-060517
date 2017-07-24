@@ -21,7 +21,7 @@
       <input type="text" id="list_title" name="list_title" placeholder="title">
       <input type="submit" value="(+) add">
     </form><!-- #add_list -->
-    
+
     <form id="add_task" action="#" method="post">
       <label for="select_list">Select List:</label>
       <select id="select_list" name="select_list"></select>
@@ -29,11 +29,20 @@
       <input type="text" id="task_description" name="task_description" placeholder="description">
       <label for="task_priority">Priority level:</label>
       <input type="text" id="task_priority" name="task_priority" placeholder="priority">
-      <input type="submit" value="(+) add">
+      <input type="submit" value="(+) add" id="submit" class="list_button_js disabled" disabled="true">
     </form><!-- #add_task -->
-    
+
     <section id="lists"></section>
-    
+
+    <h4></h4>
+    <ul id="current_list">
+
+    </ul>
+
+    <form id="delete_list" action="index.html" method="post">
+      <input type="submit" value="(-) delete list" class="list_button_js disabled" disabled="true">
+    </form>
+
   </div><!-- #wrapper -->
 </body>
 </html>

@@ -34,12 +34,25 @@ form, #lists div {
 }
 
 form, #lists div {
-	width:31%;
+	width:41%;
 	float:left;
 	padding-top: 20px;
 }
 
-#lists {
+ul {
+	clear:both;
+	border:1px solid #333;
+	background: rgba(255,255,255,.75);
+	padding:15px 20px 18px 18px;
+	border-radius:5px;
+	margin:0 2% 2% 0;
+	box-shadow: 2px 5px 5px #333;
+	width:41%;
+	float:left;
+	padding-top: 20px;
+}
+
+h4 {
 	clear:both;
 }
 
@@ -77,6 +90,10 @@ input[type="submit"], button {
 	box-shadow: 2px 2px 0px #666;
 	font-weight:bold;
 	font-size:14px;
+}
+
+.disabled {
+	color: #666;
 }
 
 input[type="submit"]:hover {
