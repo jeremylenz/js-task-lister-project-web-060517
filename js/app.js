@@ -25,13 +25,13 @@ $(function() { // on document ready
     tasksController.createNew()
   })
 
-  $('#select_list').on('input', () => {
+  $('#select_list').on('input', function () {
+    debugger;
     let listToDisplay = List.findByTitle($('#select_list').val())
     listToDisplay.display()
   })
 
   $('#delete_list').on('submit', (event) => {
-    console.log('Delete list was clicked')
     event.preventDefault();
     listController.deleteList()
   })

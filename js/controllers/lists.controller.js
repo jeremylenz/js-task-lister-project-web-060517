@@ -10,7 +10,6 @@ class ListsController {
     listOfLists.append(`<option value="${nl.title}" id="list_${nl.id}"  selected>${nl.title}</option>`)
     $('#add_list').children()[1].value = ""
     listController.enableButtons()
-    console.log(`Added list ${title}`)
     nl.display()
   }
 
@@ -18,7 +17,6 @@ class ListsController {
     let listTitle = $('#select_list').val()
     let listToDelete = List.findByTitle(listTitle);
     let listInd = List.all.indexOf(listToDelete)
-    console.log(`${listToDelete.tasks.length} tasks to be deleted.`)
     let taskIdsToDelete = listToDelete.tasks.map(function(task) {
       return task.id;
     })

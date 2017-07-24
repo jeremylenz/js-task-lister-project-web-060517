@@ -14,7 +14,6 @@ class TasksController {
     let selectedList = List.findByTitle(selectedListTitle)
     $('#task_description').val("")
     $('#task_priority').val("")
-    console.log(`Added task ${taskTitle}`)
     return new Task(taskTitle, taskPriority, selectedList)
   }
 
@@ -23,11 +22,9 @@ class TasksController {
     let taskToDelete = Task.find(id)
     let taskInd = taskToDelete.list.tasks.indexOf(taskToDelete)
     taskToDelete.list.tasks.splice(taskInd, 1)
-    console.log(`Deleted task ${taskToDelete.id} from list position ${taskInd}`)
     // Now delete it from Task.all
     taskInd = Task.all.indexOf(taskToDelete)
     Task.all.splice(taskInd, 1)
-    console.log(`Deleted task ${taskToDelete.id} from Task.all position ${taskInd}`)
     List.clearDisplay()
     if(redisplayList === true) {
     taskToDelete.list.display()
